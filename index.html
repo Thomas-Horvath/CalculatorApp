@@ -2,41 +2,123 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
-    <link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://kit.fontawesome.com/156d16ec42.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <div class="wrapper">
-        <div class="display">
-            <input type="text" readonly name="txt" placeholder="0">
-        </div>
-        <div class="buttons">
-            <span class="btn">C</span>
-            <span class="btn">1</span>
-            <span class="btn">2</span>
-            <span class="btn">+</span>
-            <span class="btn">3</span>
-            <span class="btn">4</span>
-            <span class="btn">5</span>
-            <span class="btn">-</span>
-            <span class="btn">6</span>
-            <span class="btn">7</span>
-            <span class="btn">8</span>
-            <span class="btn">*</span>
-            <span class="btn">9</span>
-            <span class="btn">0</span>
-            <span class="btn">.</span>
+  <div class="wrapper">
+    <div class="calculator">
+      <div class="display">
+        <div class="input">&nbsp;<span class="operator"></span>&nbsp;0</div>
+        <div class="output">0</div>
+      </div>
 
-            
-            <span class="btn">/</span>
-            <span class="btn">=</span>
-        </div>
     </div>
+    <div class="keys">
 
-    <script src="./app.js"></script>
+      <div data-key="clear" class="key action">
+        <span class="btn green">Clr</span>
+      </div>
+
+      <div data-key="delete" class="key action">
+        <span class="btn green">Del</span>
+      </div>
+
+      <div data-key="brackets" class="key">
+        <span class="btn green">( )</span>
+      </div>
+
+      <div data-key="%" class="key operator">
+        <span class="btn green"><i class="fa-solid fa-percent"></i></span>
+      </div>
+
+      
+      <div data-key="1" class="key">
+        <span class="btn">1</span>
+      </div>
+      
+      <div data-key="2" class="key">
+        <span class="btn">2</span>
+      </div>
+      
+      <div data-key="3" class="key">
+        <span class="btn">3</span>
+      </div>
+      
+      <div data-key="+" class="key operator">
+        <span class="btn green"><i class="fa-solid fa-plus"></i></span>
+      </div>
+      
+      <div data-key="4" class="key">
+        <span class="btn">4</span>
+      </div>
+      
+      <div data-key="5" class="key">
+        <span class="btn">5</span>
+      </div>
+      
+      <div data-key="6" class="key">
+        <span class="btn">6</span>
+      </div>
+      
+      <div data-key="-" class="key operator">
+        <span class="btn green"><i class="fa-solid fa-minus"></i></span>
+      </div>
+
+      
+      <div data-key="7" class="key">
+        <span class="btn">7</span>
+      </div>
+      
+      <div data-key="8" class="key">
+        <span class="btn">8</span>
+      </div>
+      
+      <div data-key="9" class="key">
+        <span class="btn">9</span>
+      </div>
+
+      <div data-key="*" class="key operator">
+        <span class="btn green"><i class="fa-solid fa-xmark"></i></span>
+      </div>
+
+      
+      <div data-key="0" class="key">
+        <span class="btn">0</span>
+      </div>
+      
+      <div data-key="." class="key">
+        <span class="btn">.</span>
+      </div>
+      
+      <div data-key="." class="key">
+        <span class="btn">.</span>
+      </div>
+      
+      <div data-key="/" class="key operator">
+        <span class="btn green"><i class="fa-solid fa-divide"></i></span>
+      </div>
+     
+
+
+
+      <div data-key="=" class="key operator eql_div">
+        <span class="btn eql"><i class="fa-solid fa-equals"></i></span>
+      </div>
+
+      <div data-key="**" class="key">
+        <span class="btn green" ><i class="fa-solid fa-superscript fa-sm"></i></span>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
 </body>
 
 </html>
