@@ -63,12 +63,12 @@ body {
     justify-content: flex-end;
     align-items: center;
     background-color: transparent;
-    font-size: 3.5rem;
+    font-size: 3rem;
     padding: 0 1rem;
     margin: 0;
     font-family: "digital";
     overflow: hidden;
-
+    letter-spacing: 5px;
 }
 
 
@@ -82,7 +82,6 @@ body {
     background-color: #555;
     padding: 3rem 2rem;
     box-shadow: inset 0 5px 10px rgba(79, 79, 79, 0.5);
-    
 }
 
 .key {
@@ -90,8 +89,7 @@ body {
 }
 
 .btn {
-  
-    height:100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -107,13 +105,12 @@ body {
     position: relative;
     cursor: pointer;
 }
+
 .eql_div {
-    grid-column: 1 / span 3; 
+    grid-column: 1 / span 3;
 }
+
 .eql {
-    
-    
-     
     background: #1b7ce4;
     color: #25fed7;
 }
@@ -123,6 +120,7 @@ body {
 .green {
     color: #25fed7;
 }
+
 .btn::before {
     position: absolute;
     content: "";
@@ -137,6 +135,7 @@ body {
         inset 0 15px 25px rgba(0, 0, 0, 0.35);
     color: #1b7ce4;
 }
+
 .eql:active {
     color: #111;
 }
@@ -149,11 +148,9 @@ body {
         border-radius: 0;
     }
 
-    .keys{
+    .keys {
         padding-top: 6rem;
         padding-bottom: 6rem;
-       
-
     }
 }
 
@@ -165,7 +162,6 @@ body {
 }
 
 @media screen and (max-width:320px) {
-  
     .keys {
         padding-top: 5rem;
     }
@@ -173,7 +169,8 @@ body {
     .calculator {
         margin-top: 2rem;
     }
+
     .btn {
-        font-size:1.7rem ;
+        font-size: 1.7rem;
     }
 }
