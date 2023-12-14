@@ -23,9 +23,10 @@ for (var key of keys) {
             }
             else {
                 input = input.slice(0, -1);
-                display_input.innerHTML = input === "" ? 0 : input;
+                display_input.innerHTML = input === "" ? 0 : cleanInput(input);
             }
         }
+       
 
 
         else if (value === "=") {
@@ -35,6 +36,8 @@ for (var key of keys) {
             if (input.includes('%')) {
                 // Ha van '%' jel, akkor az értéket a háttérben százalékké alakítjuk
                 result = eval(input.replace("%", "/100*"));
+            } else if (input.includes('h')) {
+                result = eval(input.replace('h','**'));
             } else {
                 // Ha nincs '%' jel, akkor normál értékkiértékelést végzünk
                 result = eval(input);
@@ -63,14 +66,51 @@ for (var key of keys) {
                 input += ')';
             }
 
-            display_input.innerHTML = input;
+            display_input.innerHTML = cleanInput(input);
         }
 
 
 
         else {
             input += value;
-            display_input.innerHTML = input;
+            display_input.innerHTML = cleanInput(input);
         }
     })
-}   
+};
+
+
+
+function cleanInput(input) {
+    let input_array = input.split("");
+    console.log(input_array);
+    let input_array_length = input_array.length;
+
+    for (let i = 0; i < input_array_length; i++) {
+        if (input_array[i] == "*") {
+            input_array[i] = `<span class="operator">x</span>`
+        }
+        else if (input_array[i] == "(") {
+            input_array[i] = `<span class="brackets">(</span>`
+        }
+        else if (input_array[i] == ")") {
+            input_array[i] = `<span class="brackets">)</span>`
+        }
+        else if (input_array[i] == "+") {
+            input_array[i] = `<span class="operator">+</span>`
+        }
+        else if (input_array[i] == "-") {
+            input_array[i] = `<span class="operator">-</span>`
+        }
+        else if (input_array[i] == "%") {
+            input_array[i] = `<span class="operator">%</span>`
+        }
+        else if (input_array[i] == "/") {
+            input_array[i] = `<span class="operator">÷</span>`
+        }
+        else if (input_array[i] == "h") {
+            input_array[i] = `<span class="operator">**</span>`
+        }
+       
+    }
+    return input_array.join("");
+};
