@@ -7,7 +7,7 @@ let input = "";
 for (var key of keys) {
     let value = key.dataset.key;
     key.addEventListener('click', () => {
-        console.log(value);
+    /*     console.log(value); */
 
 
         if (value === "clear") {
@@ -26,7 +26,7 @@ for (var key of keys) {
                 display_input.innerHTML = input === "" ? 0 : cleanInput(input);
             }
         }
-       
+
 
 
         else if (value === "=") {
@@ -37,13 +37,13 @@ for (var key of keys) {
                 // Ha van '%' jel, akkor az értéket a háttérben százalékké alakítjuk
                 result = eval(input.replace("%", "/100*"));
             } else if (input.includes('h')) {
-                result = eval(input.replace('h','**'));
+                result = eval(input.replace('h', '**'));
             } else {
                 // Ha nincs '%' jel, akkor normál értékkiértékelést végzünk
                 result = eval(input);
             }
 
-            display_output.innerHTML = result;
+            display_output.innerHTML = cleanOutput(result);
         }
 
 
@@ -72,8 +72,10 @@ for (var key of keys) {
 
 
         else {
-            input += value;
-            display_input.innerHTML = cleanInput(input);
+            if (validateInput(value)) {
+                input += value;
+                display_input.innerHTML = cleanInput(input);
+            }
         }
     })
 };
@@ -82,7 +84,7 @@ for (var key of keys) {
 
 function cleanInput(input) {
     let input_array = input.split("");
-    console.log(input_array);
+    /* console.log(input_array); */
     let input_array_length = input_array.length;
 
     for (let i = 0; i < input_array_length; i++) {
@@ -110,7 +112,53 @@ function cleanInput(input) {
         else if (input_array[i] == "h") {
             input_array[i] = `<span class="operator">**</span>`
         }
-       
+
     }
     return input_array.join("");
 };
+
+
+
+function cleanOutput(output) {
+    let output_string = output.toString();
+    let decimal = output_string.split(".")[1];
+    output_string = output_string.split(".")[0];
+
+    let output_array = output_string.split("");
+
+    if (output_array.length > 3) {
+        for (let i = output_array.length - 3; i > 0; i -= 3) {
+            output_array.splice(i, 0, ".");
+        }
+    }
+
+    if (decimal) {
+        output_array.push(".");
+        output_array.push(decimal);
+    }
+
+    return output_array.join("");
+};
+
+
+function validateInput(value) {
+    let lastinput = input.slice(-1);
+    console.log(lastinput);
+    let operators = ["+", "-", "*", "/"];
+
+    if (value === "." && lastinput === ".") {
+        return false;
+    }
+
+    if (operators.includes(value)) {
+        if (operators.includes(lastinput)) {
+            return false;
+            console.log("rossz")
+        } else {
+            return true;
+        }
+    }
+
+    return true;
+}
+

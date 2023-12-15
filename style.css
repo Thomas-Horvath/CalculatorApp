@@ -63,14 +63,22 @@ body {
     justify-content: flex-end;
     align-items: center;
     background-color: transparent;
-    font-size: 3rem;
+    font-size: 2.5rem;
     padding: 0 1rem;
     margin: 0;
     font-family: "digital";
     overflow: hidden;
     letter-spacing: 5px;
 }
-
+.input {
+    height: 30%;
+    font-size: 2.5rem;
+    
+}
+.output {
+    font-size: 3.5rem;
+    height: 70%;
+}
 
 .keys {
     display: grid;
