@@ -1,6 +1,6 @@
 @font-face {
     font-family: "digital";
-    src: url(./font/digital-7.regular.ttf);
+    src: url(../font/digital-7.regular.ttf);
 }
 
 
@@ -25,7 +25,7 @@
 
 .wrapper {
     width: 400px;
-    height: 80vh;
+    height:95vh;
     background-color: #262626;
     display: flex;
     align-items: center;
@@ -187,7 +187,7 @@
 /*  ============================ STYLE SELECTOR =================================7 */
 .selector {
     color: #eee;
-    margin-bottom: 1rem;
+    margin: 1rem 0; 
     font-size: .9rem;
     font-family: sans-serif;
     font-weight: 600;
@@ -305,7 +305,7 @@ input:checked+.button::after {
 
 .modern_wrapper {
     width: 400px;
-    height: 80vh;
+    height: 95vh;
     background-color: rgba(255, 255, 255, 0.06);
     z-index: 1;
     backdrop-filter: blur(20px);
@@ -406,29 +406,23 @@ input:checked+.button::after {
 
 /*  =========================== MEDIA SCREENS ========================= */
 @media screen and (max-width: 420px) {
-    .wrapper {
+    .wrapper , .modern_wrapper {
         height: 100vh;
         width: 100vw;
         border-radius: 0;
     }
 
     .keys {
-        padding-top: 6rem;
-        padding-bottom: 6rem;
+      padding: 1rem 0.2rem;
     }
 }
 
 @media screen and (max-width:370px) {
-    .keys {
-        padding-left: 0.2rem;
-        padding-right: 0.2rem;
-    }
+    
 }
 
 @media screen and (max-width:320px) {
-    .keys {
-        padding-top: 5rem;
-    }
+  
 
     .calculator {
         margin-top: 2rem;
