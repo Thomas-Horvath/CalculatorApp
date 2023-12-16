@@ -6,16 +6,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calculator</title>
   <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./style/style.css">
   <script src="https://kit.fontawesome.com/156d16ec42.js" crossorigin="anonymous"></script>
+ 
 </head>
 
-<body>
+<body class="body">
+  <span class="selector">Style selector</span>
+  <div class="mode_btn">
+    <span class="old">Old</span>
+    <input type="checkbox" name="mode" id="mode">
+    <label for="mode" class="button"></label>
+    <span class="modern">Modern</span>
+  </div>
   <div class="wrapper">
-    <div class="calculator">
+    <div class="calculator ">
       <div class="display">
-        <div class="input">&nbsp;<span class="operator"></span>&nbsp;0</div>
-        <div class="output">0</div>
+        <div class="input">0</div>
+        <!--  <div class="output">0</div> -->
       </div>
 
     </div>
@@ -117,10 +125,13 @@
 
     </div>
   </div>
+  <div class="alert">
+    Max 20 karakter lehetséges!
+  </div>
 
-  <script src="./app.js"></script>
+
+  <script src="./script/app.js"></script>
 </body>
 
 </html>
 
-<!-- https://www.youtube.com/watch?v=_x8mNUBhLSk&t=474s  32:00 -->
