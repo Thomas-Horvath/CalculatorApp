@@ -169,7 +169,7 @@
     border: 2px solid #1b7ce4;
     border-radius: 6px;
     opacity: 0;
-    visibility: none;
+    visibility: hidden;
     z-index: -1;
     user-select: none;
 }
