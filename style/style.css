@@ -415,11 +415,28 @@ input:checked+.button::after {
     .keys {
       padding: 1rem 0.2rem;
     }
+    .modern_keys {
+        padding: 0;
+    }
+    .modern_wrapper {
+        padding: 0;
+        border: none;
+      }
+      .wrapper {
+        border : none;
+      }
+      .modern_calculator {
+        border: none;
+      }
+      .input {
+        font-size: 2.6rem;
+      }
+      .operator {
+        font-size: 2.6rem;
+      }
 }
 
-@media screen and (max-width:370px) {
-    
-}
+
 
 @media screen and (max-width:320px) {
   
@@ -442,3 +459,6 @@ input:checked+.button::after {
         justify-content: center;
     }
 }
+
+/* 420 alatt a bordereket le kell szedni, a számok körül a  paddinfóget nullára álítani ( csak a modernnél). 
+displayt megnézni mert nem férnek el a számik(kisseb betűméret) */
